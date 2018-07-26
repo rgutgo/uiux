@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+*{margin:0;padding:0;}
+#wrap{
+    width:960px;
+    margin:30px auto 0;font-weight:800;font-size:2em;text-align:center;
+line-height:500;}
+			/* 텍스트 관련 속성 [ex:text-align] 같은 것은 부모에게 상속 받는다.*/
+header,.lnb,.ad,.cont,footer{border-radius:10px;}
+header{height:100px;background-color:gray;}
+section{margin:10px 0;*zoom:1;}
+section:after{
+display:block;/*clear:both는 반드시 block 속성에서만 적용되기 때문에*/
+clear:both;/*float의 영향력 차단효과*/
+content:'';/*가상선택자 :after는 반드시 content 속성이 필요*/
+}
+section>.left{float:left;width:200px;}
+section>.left>.lnb{height:250px;margin-bottom:10px;background-color:blue;}
+section>.left>.ad{height:140px;background-color:pink;}
+section>.cont{float:right;width:750px;height:400px;background-color:yellow;}
+footer{height:100px;background-color:brown;}
+
+
+/*반응형 - 모바일*/
+@media screen and (max-width:768px){
+    #wrap{
+        margin:0;
+        width:100%;
+    }
+    section>.left{
+        float:none;
+        width:100%;
+    }
+    section>.cont{
+        float:none;
+        width:100px;
+        margin-top:10px;
+}
+			

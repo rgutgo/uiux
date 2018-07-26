@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테이블만들기</title>
+    <link rel="shortcut icon" href="imagrs/favicon.ico">
+    <style>
+        #wrap{
+            width:650px;
+            margin:0 auto;
+            
+        }
+        h1{
+            font-size:20px;text-align:center;
+        }
+        hr{
+            margin:30px 0;
+        }
+        /*
+            td는 세로중앙정렬만 기본설정됨
+        
+        셀(td) 안에서 세로 정렬은 vetical-align 속성을 이용
+        */
+        table{border-collapse:collapse;}/*테이블 전용태그*/
+        /*th는  굵은글씨, 가세정렬이 기본설정됨
+          th는 테이블 컬럼에 사용된 자료를 구분하기위해 쓰임
+          열에 대한 제못 scope="clo"
+          행에 대한 제목 scope="row"*/
+        th{
+            width:150px;
+            height:50px;
+            border:1px solid black;
+        }
+        td{
+            width:150px;
+            height:50px;
+            text-align:center;
+            border:1px solid black;
+            vertical-align:top;
+            vertical-align:bottom;
+            vertical-align:middle;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <h1>테이블은 표로된 정보를 나타낼 때만 사용</h1>
+    </header>
+    
+    <section>
+        <h2>1행 1열</h2>
+        <table>
+            <tr><!--행을 나타냄-->
+                <td>1행 1열</td><!--열을 나타냄-->
+            </tr>
+        </table>
+        
+        <hr>
+        
+        <h2>1행 2열</h2>
+        <table>
+            <tr>
+                <td>1행 1열</td>
+                <td>1행 2열</td>
+            </tr>
+        </table>
+        
+        <hr>
+        
+        <h2>1행 3열</h2>
+        <table>
+            <tr>
+                <td>1행 1열</td>
+                <td>1행 2열</td>
+                <td>1행 3열</td>
+            </tr>
+        </table>
+        
+        <hr>
+        
+        <h2>2행 1열</h2>
+        <table>
+            <tr>
+                <td>1-1</td>
+            </tr>
+            <tr>
+                <td>2-1</td>
+            </tr>
+        </table>
+        
+        <hr>
+        
+        <h2>2행 2열</h2>
+        <table>
+            <tr>
+                <td>1-1</td>
+                <td>1-2</td>
+            </tr>
+            <tr>
+                <td>2-1</td>
+                <td>2-2</td>
+            </tr>
+        </table>
+        
+        <hr>
+        
+        <h2>3행 4열</h2>
+        <table>
+            <tr>
+                <td>1-1</td>
+                <td>1-2</td>
+                <td>1-3</td>
+                <td>1-4</td>
+            </tr>
+            <tr>
+                <td>2-1</td>
+                <td>2-2</td>
+                <td>2-3</td>
+                <td>2-4</td>
+            </tr>
+            <tr>
+                <td>3-1</td>
+                <td>3-2</td>
+                <td>3-3</td>
+                <td>3-4</td>
+            </tr>
+        </table>
+
+
+        
+        <hr>
+        
+        <h2>ui ux출석부</h2>
+        
+        <table>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">연락처</th>
+                <th scope="col">주량</th>
+                <th scope="col">지역</th>
+            </tr>
+            <tr>
+                <td>홍길도</td>
+                <td>010-123-123</td>
+                <td>2병</td>
+                <td>무릉 도원</td>
+            </tr>
+            <tr>
+                <td>김상우</td>
+                <td>010-1234-1234</td>
+                <td>조금</td>
+                <td>강동구</td>
+            </tr>
+            <tr>
+                <td>김상우</td>
+                <td>010-1234-1234</td>
+                <td>조금</td>
+                <td>강동구</td>
+            </tr>
+        </table>
+        
+        <hr>
+        
+        <h2>3행 4열 테이블에서 병합 rowspan행, colspan열<!--머리에다가--></h2>
+        
+        <table>
+            <tr>
+                <td>1-1</td>
+                <td colspan="3">1-2</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2-1</td>
+                <td>2-2</td>
+                <td>2-3</td>
+                <td rowspan="2">2-4</td>
+            </tr>
+            <tr>
+                <td colspan="2">3-2</td>
+            </tr>
+        </table>
+        
+        
+        
+        
+    </section>
+</div>
+</body>
+</html>

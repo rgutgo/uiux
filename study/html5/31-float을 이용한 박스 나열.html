@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>float을 이용한 박스 나열</title>
+    <link rel="shortcut icon" href="imagrs/favicon.ico">
+    <link rel="stylesheet" href="css/css%20reset.css">
+    <style>
+        hr{position:static;left:0;margin:50px 0;}
+        .study>li{
+            float:left;
+            width:200px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+            
+        }
+        .study>li:nth-child(1){background-color:red;}
+        .study>li:nth-child(2){background-color:blue;}
+        .study>li:nth-child(3){background-color:black;}
+        .study>li:nth-child(4){background-color:coral;}
+        .clearfix{clear:both;}
+        /****************************************************/
+        
+        .subject:after{
+            display:block;
+            clear:both;
+            background-color:pink;
+            content::"";
+        }
+        
+        
+        
+        
+        .subject{
+            float:left;
+            width:200px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+        }
+        
+        .subject>li:nth-child(1){background-color:yellow;}
+        .subject>li:nth-child(2){background-color:aqua;}
+        .subject>li:nth-child(3){background-color:pink;}
+        .subject>li:nth-child(4){background-color:brown;}
+        
+        /******************************************/
+        
+        .test{*zoom:1;}/*구형 ie 브라우저에서 아래의 :after 가상선택자 구문을 인식하게 하는 코드로서 CSS핵이라고 불린다.*/
+        
+        .test:after{
+            display:block;
+            clear:both;
+            content:'';
+        }
+        
+        .test>span{
+            display:block;
+            float:left;
+            width:100px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+        }
+        
+        #wrap>.test>.red{background-color:red;}
+        #wrap>.test>.blue{background-color:blue;}
+        #wrap>.test>.yellow{background-color:yellow;}
+        #wrap>.test>.green{background-color:green;}
+        #wrap>.test>.pink{background-color:pink;}
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1 class="text-center">float을 이용한 박스 나열</h1>
+        <ul class="study">
+            <li>HTML5</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+            <li>jQuery</li>
+        </ul>
+        
+        <!--1.flat의 끌어당기는 여향력을 차단시키는 역활
+            2.flat의 영향을 차단시키는 마감재 사용은 필수(반드시)-->
+        <div class="clearfix"></div>
+        
+        <p>안녕</p>
+        
+        <hr>
+        
+        <ol class="study">
+            <li>uiux</li>
+            <li>포토샵</li>
+            <li>일러스트</li>
+            <li>포트폴리오</li>
+        </ol>
+        
+        
+        <!--<p style="clear:both";>추천과목</p>-->
+        <p>인기과목</p>
+        
+        <hr>
+        
+        <!--가상선택자를 이용하여 float을 완성 하세여
+        
+        박스사이즈 100.100-->
+        
+        <p class="test">
+            <span class="red">1</span>
+            <span class="blue">2</span>
+            <span class="yellow">3</span>
+            <span class="green">4</span>
+            <span class="pink">5</span>
+        </p>
+        
+        <p>플롯테스트</p>
+    </div>
+</body>
+</html>
